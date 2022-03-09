@@ -1,6 +1,6 @@
 <?php 
 require 'header.php'; 
-echo $output;
+echo isset($output);
 ?>
 
 <div class="container-fluid mx-2 sticky-sm-top">
@@ -14,7 +14,7 @@ echo $output;
                 <div class="wrapper" style="width: 100%">
 
                 <form action="#">
-                <input class="file-input"   type="file" name="file" accept="image/*" hidden>
+                <input class="file-input" type="file" name="file" accept="image/*" hidden>
                 <i class="fas fa-cloud-upload-alt"></i>
                 <!-- <p>Browse Images</p> -->
                 </form>
@@ -94,5 +94,10 @@ echo $output;
         </div>
     </div>
 </div>
-
+<script type="text/javascript"> 
+// function doSomething() { 
+//     $.get("destroy.php"); 
+//     return false; 
+// } 
+// </script>
 <?php require 'footer.php'; ?>
