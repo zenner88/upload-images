@@ -1,4 +1,7 @@
-<?php require 'header.php'; ?>
+<?php 
+require 'header.php'; 
+echo $output;
+?>
 
 <div class="container-fluid mx-2 sticky-sm-top">
     <div class="row">
