@@ -23,23 +23,23 @@
         <div class="col-12 col-lg-10">
         <div class="container bg-light px-4 py-2 mt-1 rounded" id="face">
             <div class="row">
-                <div class="col-12 col-md-9 border text-center px-2 py-2 bg-secondary rounded">
-                    <img style="max-height: 390px" 
+                <div class="col-12 col-md-9 border text-center bg-secondary px-2 py-2 rounded">
+                    <img class="rounded" style="max-height: 390px;"
                     src="php/files/<?php 
-                    if ($_SESSION['foto'] == ''){
-                        echo 'empty.jpg';
-                        }else{
-                        echo $_SESSION['foto'];
-                        } ?>" 
+                        if(isset($_SESSION['foto']) == '')
+                        {echo 'images.png';}
+                        else
+                        {echo $_SESSION['foto'];}
+                        ?>" 
                     alt="">
                 </div>
                 <div class="col-12 col-md-3">
                     <div class="row">
                         <div class="border rounded px-4 py-2 mx-2 my-2" style="width:100%;">
-                                <h5 class="card-title">Nama : EKA JAYA</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">NIK : 3174032608740002 </h6>
-                                <hr>
-                                <p class="fs-6" style="font-size: 12px; line-height: 2;">
+                            <h5 class="card-title">Nama : EKA JAYA</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">NIK : 3174032608740002 </h6>
+                            <hr>
+                            <p class="fs-6" style="font-size: 12px; line-height: 2;">
                                 <b>No.KK:</b> 3174031401093495 <br>
                                 <b>TTL:</b> JAKARTA, 26-08-1974 <br>
                                 <b>Alamat:</b> JL.KEMANG UTARA I B 013/001, Kelurahan BANGKA, Kecamatan MAMPANG PRAPATAN, Kabupaten JAKARTA SELATAN, Provinsi DKI JAKARTA <br>
@@ -48,8 +48,7 @@
                                 <b>Agama:</b> ISLAM <br>
                                 <b>Status:</b> KAWIN <br>
                                 <b>Pekerjaan:</b> KARYAWAN SWASTA
-                                </p>
-                                
+                            </p>                               
                         </div>
                     </div>               
                 </div>
