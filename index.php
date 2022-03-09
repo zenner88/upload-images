@@ -3,7 +3,7 @@ require 'header.php';
 // echo isset($output);
 ?>
 
-<div class="container-fluid mx-2 sticky-sm-top">
+<div class="container-fluid mx-2 sticky-sm-top" style="position: absolute; top: 0px;">
     <div class="row">
         <div class="col-12 col-lg-2">
             <div class="container bg-light px-2 py-1 mt-1 rounded">
@@ -24,7 +24,7 @@ require 'header.php';
             </div>
         </div>
         <div class="col-12 col-lg-10">
-        <div class="container bg-light px-4 py-2 mt-1 rounded" id="face">
+        <div class="container bg-light px-4 py-2 mt-1 rounded">
             <div class="row">
                 <div class="col-12 col-md-9 border text-center bg-secondary px-2 py-2 rounded">
                     <div id="fotoo">
@@ -37,6 +37,7 @@ require 'header.php';
                 <div class="col-12 col-md-3">
                     <div class="row">
                         <div class="border rounded px-4 py-2 mx-2 my-2" style="width:100%;">
+                            <div id="biodata">
                             <h5 class="card-title">Nama : EKA JAYA</h5>
                             <h6 class="card-subtitle mb-2 text-muted">NIK : 3174032608740002 </h6>
                             <hr>
@@ -49,39 +50,40 @@ require 'header.php';
                                 <b>Agama:</b> ISLAM <br>
                                 <b>Status:</b> KAWIN <br>
                                 <b>Pekerjaan:</b> KARYAWAN SWASTA
-                            </p>                               
+                            </p>        
+                            </div>                       
                         </div>
                     </div>               
                 </div>
             </div>
             <div class="row border rounded mt-2 py-2">
                 <div class="col-6 col-md-2">
-                    <div class="card" style="width: 100%;">
-                        <img src="luxand/needle/portrait1.jpeg" class="card-img-top" alt="...">
+                    <div class="card" style="width: 100%;" id="fotokecil1">
+                        <img onclick="myFunction()" src="luxand/needle/portrait1.jpeg" class="card-img-top" alt="...">
                         <div class="card-body py-1">
                             <p class="card-text">94.22</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-6 col-md-2">
-                    <div class="card" style="width: 100%;">
-                        <img src="luxand/needle/portrait2.jpeg" class="card-img-top" alt="...">
+                    <div class="card" style="width: 100%;" id="fotokecil2">
+                        <img onclick="myFunction()" src="luxand/needle/portrait2.jpeg" class="card-img-top" alt="...">
                         <div class="card-body py-1">
                             <p class="card-text">94.22</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-6 col-md-2">
-                    <div class="card" style="width: 100%;">
-                        <img src="luxand/needle/portrait3.jpeg" class="card-img-top" alt="...">
+                    <div class="card" style="width: 100%;" id="fotokecil3">
+                        <img onclick="myFunction()" src="luxand/needle/portrait3.jpeg" class="card-img-top" alt="...">
                         <div class="card-body py-1">
                             <p class="card-text">94.22</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-6 col-md-2">
-                    <div class="card" style="width: 100%;">
-                        <img src="luxand/needle/portrait4.jpeg" class="card-img-top" alt="...">
+                    <div class="card" style="width: 100%;" id="fotokecil4">
+                        <img onclick="myFunction()" src="luxand/needle/portrait4.jpeg" class="card-img-top" alt="...">
                         <div class="card-body py-1">
                             <p class="card-text">94.22</p>
                         </div>
@@ -93,9 +95,25 @@ require 'header.php';
     </div>
 </div>
 <script type="text/javascript"> 
-// function doSomething() { 
-//     $.get("destroy.php"); 
-//     return false; 
-// } 
-// </script>
+    var x1 = document.getElementById("fotokecil1");
+    var x2 = document.getElementById("fotokecil2");
+    var x3 = document.getElementById("fotokecil3");
+    var x4 = document.getElementById("fotokecil4");
+    x1.style.display = "none";
+    x2.style.display = "none";
+    x3.style.display = "none";
+    x4.style.display = "none";
+
+    var biodata = document.getElementById("biodata");
+    biodata.style.display = "none";
+
+    function myFunction() {
+    var x = document.getElementById("biodata");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+    }
+</script>
 <?php require 'footer.php'; ?>

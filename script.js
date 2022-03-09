@@ -74,5 +74,12 @@ function uploadFile(name){
       $("#fotoo").load(location.href + " #fotoo")
       }, 2000);
   });
-  
+  var x1 = document.getElementById("fotokecil1");
+  var x2 = document.getElementById("fotokecil2");
+  var x3 = document.getElementById("fotokecil3");
+  var x4 = document.getElementById("fotokecil4");
+  x1.style.display = "block";
+  x2.style.display = "block";
+  x3.style.display = "block";
+  x4.style.display = "block";
 }
