@@ -1,6 +1,6 @@
 <?php 
 require 'header.php'; 
-echo isset($output);
+// echo isset($output);
 ?>
 
 <div class="container-fluid mx-2 sticky-sm-top">
@@ -28,12 +28,8 @@ echo isset($output);
             <div class="row">
                 <div class="col-12 col-md-9 border text-center bg-secondary px-2 py-2 rounded">
                     <img class="rounded" style="max-height: 390px;"
-                    src="php/files/<?php 
-                        if(isset($_SESSION['foto']) == '')
-                        {echo 'images.png';}
-                        else
-                        {echo $_SESSION['foto'];}
-                        ?>" 
+                        src="luxand/output/output.jpeg" 
+                        onError="this.onerror=null;this.src='assets/images.png';"
                     alt="">
                 </div>
                 <div class="col-12 col-md-3">
@@ -59,7 +55,7 @@ echo isset($output);
             <div class="row border rounded mt-2 py-2">
                 <div class="col-6 col-md-2">
                     <div class="card" style="width: 100%;">
-                        <img src="assets/1.jpeg" class="card-img-top" alt="...">
+                        <img src="luxand/needle/portrait1.jpeg" class="card-img-top" alt="...">
                         <div class="card-body py-1">
                             <p class="card-text">94.22</p>
                         </div>
@@ -67,7 +63,7 @@ echo isset($output);
                 </div>
                 <div class="col-6 col-md-2">
                     <div class="card" style="width: 100%;">
-                        <img src="assets/2.jpeg" class="card-img-top" alt="...">
+                        <img src="luxand/needle/portrait2.jpeg" class="card-img-top" alt="...">
                         <div class="card-body py-1">
                             <p class="card-text">94.22</p>
                         </div>
@@ -75,7 +71,7 @@ echo isset($output);
                 </div>
                 <div class="col-6 col-md-2">
                     <div class="card" style="width: 100%;">
-                        <img src="assets/3.jpeg" class="card-img-top" alt="...">
+                        <img src="luxand/needle/portrait3.jpeg" class="card-img-top" alt="...">
                         <div class="card-body py-1">
                             <p class="card-text">94.22</p>
                         </div>
@@ -83,7 +79,7 @@ echo isset($output);
                 </div>
                 <div class="col-6 col-md-2">
                     <div class="card" style="width: 100%;">
-                        <img src="assets/4.jpeg" class="card-img-top" alt="...">
+                        <img src="luxand/needle/portrait4.jpeg" class="card-img-top" alt="...">
                         <div class="card-body py-1">
                             <p class="card-text">94.22</p>
                         </div>
