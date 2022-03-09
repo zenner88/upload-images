@@ -67,8 +67,12 @@ function uploadFile(name){
   xhr.send(data); //sending form data
   
   $(function() {
-    setTimeout(function() { $("#notif").fadeOut(1500); }, 3000)
+    setTimeout(function() { $("#notif").fadeOut(1500); }, 2000)
   })
-  $("#face").load(" #face > *");
-  // window.location = "http://localhost/upload-images/identification.php";
+  $(document).ready(function(){
+    setInterval(function(){
+      $("#fotoo").load(location.href + " #fotoo")
+      }, 2000);
+  });
+  
 }

@@ -27,10 +27,12 @@ require 'header.php';
         <div class="container bg-light px-4 py-2 mt-1 rounded" id="face">
             <div class="row">
                 <div class="col-12 col-md-9 border text-center bg-secondary px-2 py-2 rounded">
+                    <div id="fotoo">
                     <img class="rounded" style="max-height: 390px;"
                         src="luxand/output/output.jpeg" 
                         onError="this.onerror=null;this.src='assets/images.png';"
                     alt="">
+                    </div>
                 </div>
                 <div class="col-12 col-md-3">
                     <div class="row">
