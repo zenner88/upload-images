@@ -95,14 +95,14 @@ require 'header.php';
     </div>
 </div>
 <script type="text/javascript"> 
-    var x1 = document.getElementById("fotokecil1");
-    var x2 = document.getElementById("fotokecil2");
-    var x3 = document.getElementById("fotokecil3");
-    var x4 = document.getElementById("fotokecil4");
-    x1.style.display = "none";
-    x2.style.display = "none";
-    x3.style.display = "none";
-    x4.style.display = "none";
+    // var x1 = document.getElementById("fotokecil1");
+    // var x2 = document.getElementById("fotokecil2");
+    // var x3 = document.getElementById("fotokecil3");
+    // var x4 = document.getElementById("fotokecil4");
+    // x1.style.display = "none";
+    // x2.style.display = "none";
+    // x3.style.display = "none";
+    // x4.style.display = "none";
 
     var biodata = document.getElementById("biodata");
     biodata.style.display = "none";

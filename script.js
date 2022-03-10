@@ -71,7 +71,7 @@ function uploadFile(name){
   })
   $(document).ready(function(){
     setInterval(function(){
-      $("#fotoo").load(location.href + " #fotoo")
+      $("#fotoo").load(location.reload(true))
       }, 2000);
   });
   var x1 = document.getElementById("fotokecil1");
