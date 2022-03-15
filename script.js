@@ -74,12 +74,16 @@ function uploadFile(name){
       $("#fotoo").load(location.reload(true))
       }, 2000);
   });
-  var x1 = document.getElementById("fotokecil1");
-  var x2 = document.getElementById("fotokecil2");
-  var x3 = document.getElementById("fotokecil3");
-  var x4 = document.getElementById("fotokecil4");
-  x1.style.display = "block";
-  x2.style.display = "block";
-  x3.style.display = "block";
-  x4.style.display = "block";
+  // setInterval(callfoto(), 4000);
+
+  // function callfoto(){
+  //   var x1 = document.getElementById("fotokecil1");
+  //   var x2 = document.getElementById("fotokecil2");
+  //   var x3 = document.getElementById("fotokecil3");
+  //   var x4 = document.getElementById("fotokecil4");
+  //   x1.style.display = "block";
+  //   x2.style.display = "block";
+  //   x3.style.display = "block";
+  //   x4.style.display = "block";
+  // }
 }
