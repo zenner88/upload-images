@@ -129,3 +129,58 @@ section .details span{
 .uploaded-area i.fa-check{
   font-size: 10px;
 }
+.container800{
+  /* max-width: 850px; */
+  background-color: #103552;
+}
+h5{
+  font-size: 12px;
+}
+h6{
+  font-size: 12px;
+}
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:0px;
+	right:50px;
+	text-align:center;
+}
+
+.my-float{
+	margin-top:22px;
+}
+
+.portfolio-menu{
+	text-align:center;
+}
+.portfolio-menu ul li{
+	display:inline-block;
+	margin:0;
+	list-style:none;
+	padding:10px 15px;
+	cursor:pointer;
+	-webkit-transition:all 05s ease;
+	-moz-transition:all 05s ease;
+	-ms-transition:all 05s ease;
+	-o-transition:all 05s ease;
+	transition:all .5s ease;
+}
+
+.portfolio-item{
+	/*width:100%;*/
+}
+.portfolio-item .item{
+	/*width:303px;*/
+	float:left;
+	margin-bottom:10px;
+}
+
+.nav li:hover,
+.nav li:hover a {
+  background-color: #103552;
+  color: white; 
+  font-weight: bold;
+  width: 100%;
+}

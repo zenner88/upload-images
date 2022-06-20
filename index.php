@@ -2,109 +2,56 @@
 require 'header.php'; 
 // echo isset($output);
 ?>
-
-<div class="container-fluid mx-2 sticky-sm-top" style="position: absolute; top: 0px;">
-    <div class="row">
-        <div class="col-12 col-lg-2">
-            <div class="container bg-light px-2 py-1 mt-1 rounded">
-                <div class="text-center pt-2">
-                    <img src="assets/logo-brimob.png" style="width: 100%; max-width: 100px;" alt="">
-                </div>
-                <HR>
-                <div class="wrapper" style="width: 100%">
-
-                <form action="#">
-                <input class="file-input" type="file" name="file" accept="image/*" hidden>
-                <i class="fas fa-cloud-upload-alt"></i>
-                <!-- <p>Browse Images</p> -->
-                </form>
-                <section class="progress-area"></section>
-                <section class="uploaded-area"></section>
-                </div>
+<div class="container-fluid sticky-sm-top container800" style="position: absolute; top: 0px;">
+<div class="row my-2">
+    <div class="col-2">
+        <ul class="nav flex-column rounded" style="background-color: #0C4152;">
+            <li class="nav-item">
+                <a class="nav-link text-white" id="beranda">Beranda</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" id="heystack">List Foto</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" data-bs-toggle="modal" href="#exampleModalToggle">Upload</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-10">
+        <div class="border text-center bg-dark px-1 py-1 rounded" id="foto-upload" style="display:block;">
+            <div id="fotoo">
+            <img onload="callfoto()" class="rounded" style="max-height: 360px;"
+                src="luxand/output/output.jpeg" 
+                onError="this.onerror=null;this.src='assets/images.png';"
+            alt="">
             </div>
+            <a href="#" class="float">
+            <button class="btn btn-primary text-center" onclick="callfoto()" data-bs-toggle="modal" data-bs-target="#showIdentification">SHOW</button>
+            </a>
         </div>
-        <div class="col-12 col-lg-10">
-        <div class="container bg-light px-4 py-2 mt-1 rounded">
-            <div class="row">
-                <div class="col-12 col-md-9 border text-center bg-secondary px-2 py-2 rounded">
-                    <div id="fotoo">
-                    <img onload="callfoto()" class="rounded" style="max-height: 390px;"
-                        src="luxand/output/output.jpeg" 
-                        onError="this.onerror=null;this.src='assets/images.png';"
-                    alt="">
-                    </div>
-                </div>
-                <div class="col-12 col-md-3">
-                    <div class="row">
-                        <div class="border rounded px-4 py-2 mx-2 my-2" style="width:100%;">
-                            <div id="biodata1">
-                            <h5 class="card-title">Nama : EKA JAYA</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">NIK : 3174032608740002 </h6>
-                            <hr>
-                            <p class="fs-6" style="font-size: 12px; line-height: 2;">
-                                <b>No.KK:</b> 3174031401093495 <br>
-                                <b>TTL:</b> JAKARTA, 26-08-1974 <br>
-                                <b>Alamat:</b> JL.KEMANG UTARA I B 013/001, Kelurahan BANGKA, Kecamatan MAMPANG PRAPATAN, Kabupaten JAKARTA SELATAN, Provinsi DKI JAKARTA <br>
-                                <b>Jenis Kelamin:</b> LAKI-LAKI <br>
-                                <b>Gol. Darah:</b> AB <br>
-                                <b>Agama:</b> ISLAM <br>
-                                <b>Status:</b> KAWIN <br>
-                                <b>Pekerjaan:</b> KARYAWAN SWASTA
-                            </p>        
-                            </div>
-                            <div id="biodata2">
-                            <h5 class="card-title">Nama : ADI PUTRA</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">NIK : 3174032608740003 </h6>
-                            <hr>
-                            <p class="fs-6" style="font-size: 12px; line-height: 2;">
-                                <b>No.KK:</b> 3174031401093496 <br>
-                                <b>TTL:</b> JAKARTA, 26-08-1974 <br>
-                                <b>Alamat:</b> JL.KEMANG UTARA I B 013/001, Kelurahan BANGKA, Kecamatan MAMPANG PRAPATAN, Kabupaten JAKARTA SELATAN, Provinsi DKI JAKARTA <br>
-                                <b>Jenis Kelamin:</b> LAKI-LAKI <br>
-                                <b>Gol. Darah:</b> AB <br>
-                                <b>Agama:</b> ISLAM <br>
-                                <b>Status:</b> KAWIN <br>
-                                <b>Pekerjaan:</b> KARYAWAN SWASTA
-                            </p>        
-                            </div> 
-                            <div id="biodata3">
-                            <h5 class="card-title">Nama : EK0 WIJOYO</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">NIK : 3174032608740004 </h6>
-                            <hr>
-                            <p class="fs-6" style="font-size: 12px; line-height: 2;">
-                                <b>No.KK:</b> 3174031401093497 <br>
-                                <b>TTL:</b> JAKARTA, 26-08-1974 <br>
-                                <b>Alamat:</b> JL.KEMANG UTARA I B 013/001, Kelurahan BANGKA, Kecamatan MAMPANG PRAPATAN, Kabupaten JAKARTA SELATAN, Provinsi DKI JAKARTA <br>
-                                <b>Jenis Kelamin:</b> LAKI-LAKI <br>
-                                <b>Gol. Darah:</b> AB <br>
-                                <b>Agama:</b> ISLAM <br>
-                                <b>Status:</b> KAWIN <br>
-                                <b>Pekerjaan:</b> KARYAWAN SWASTA
-                            </p>        
-                            </div> 
-                            <div id="biodata4">
-                            <h5 class="card-title">Nama : FIRMAN</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">NIK : 3174032608740005 </h6>
-                            <hr>
-                            <p class="fs-6" style="font-size: 12px; line-height: 2;">
-                                <b>No.KK:</b> 3174031401093498 <br>
-                                <b>TTL:</b> JAKARTA, 26-08-1974 <br>
-                                <b>Alamat:</b> JL.KEMANG UTARA I B 013/001, Kelurahan BANGKA, Kecamatan MAMPANG PRAPATAN, Kabupaten JAKARTA SELATAN, Provinsi DKI JAKARTA <br>
-                                <b>Jenis Kelamin:</b> LAKI-LAKI <br>
-                                <b>Gol. Darah:</b> AB <br>
-                                <b>Agama:</b> ISLAM <br>
-                                <b>Status:</b> KAWIN <br>
-                                <b>Pekerjaan:</b> KARYAWAN SWASTA
-                            </p>        
-                            </div>                        
-                        </div>
-                    </div>               
-                </div>
-            </div>
-            <div class="row border rounded mt-2 py-2">
-            <button class="btn btn-primary text-center" onclick="callfoto()">SHOW</button>
+        <div class="border text-center bg-dark px-1 py-1 rounded" id="heystack-galery" style="display:none;">
+            <?php include "heystack-galery.php";?>
+        </div>
+    </div>
+</div>
+</div>
 
-                <div class="col-6 col-md-2">
+<!-- The Modal -->
+<div class="modal fade" id="showIdentification">
+    <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
+    <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <h6 class="modal-title">Identification</h6>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+           <div class="row">
+                <!-- Foto list  -->
+                <div class="col">
                     <div class="card" style="width: 100%;" id="fotokecil1">
                         <img onclick="myFunction1()" src="luxand/needle/portrait1.jpeg" class="card-img-top" alt="...">
                         <div class="card-body py-1">
@@ -112,7 +59,7 @@ require 'header.php';
                         </div>
                     </div>
                 </div>
-                <div class="col-6 col-md-2">
+                <div class="col">
                     <div class="card" style="width: 100%;" id="fotokecil2">
                         <img onclick="myFunction2()" src="luxand/needle/portrait2.jpeg" class="card-img-top" alt="...">
                         <div class="card-body py-1">
@@ -120,7 +67,7 @@ require 'header.php';
                         </div>
                     </div>
                 </div>
-                <div class="col-6 col-md-2">
+                <div class="col">
                     <div class="card" style="width: 100%;" id="fotokecil3">
                         <img onclick="myFunction3()" src="luxand/needle/portrait3.jpeg" class="card-img-top" alt="...">
                         <div class="card-body py-1">
@@ -128,7 +75,7 @@ require 'header.php';
                         </div>
                     </div>
                 </div>
-                <div class="col-6 col-md-2">
+                <div class="col">
                     <div class="card" style="width: 100%;" id="fotokecil4">
                         <img onclick="myFunction4()" src="luxand/needle/portrait4.jpeg" class="card-img-top" alt="...">
                         <div class="card-body py-1">
@@ -136,12 +83,114 @@ require 'header.php';
                         </div>
                     </div>
                 </div>
+           </div>
+           <div class="row">
+            <div class="col">
+                <div class="border rounded px-1 py-1 mt-1" style="width:100%;">
+                    <div id="biodata1">
+                    <h5 class="card-title">EKA JAYA</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">NIK : 3174032608740002 </h6>
+                    <p class="" style="font-size: 12px; line-height: 2;">
+                        <b>No.KK:</b> 3174031401093495 <br>
+                        <b>TTL:</b> JAKARTA, 26-08-1974 <br>
+                        <b>Alamat:</b> JL.KEMANG UTARA I B 013/001, Kelurahan BANGKA, Kecamatan MAMPANG PRAPATAN, Kabupaten JAKARTA SELATAN, Provinsi DKI JAKARTA <br>
+                        <b>Jenis Kelamin:</b> LAKI-LAKI <br>
+                        <b>Gol. Darah:</b> AB <br>
+                        <b>Agama:</b> ISLAM <br>
+                        <b>Status:</b> KAWIN <br>
+                        <b>Pekerjaan:</b> KARYAWAN SWASTA
+                    </p>        
+                    </div>
+                    <div id="biodata2">
+                    <h5 class="card-title">ADI PUTRA</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">NIK : 3174032608740003 </h6>
+                    <p class="" style="font-size: 12px; line-height: 2;">
+                        <b>No.KK:</b> 3174031401093496 <br>
+                        <b>TTL:</b> JAKARTA, 26-08-1974 <br>
+                        <b>Alamat:</b> JL.KEMANG UTARA I B 013/001, Kelurahan BANGKA, Kecamatan MAMPANG PRAPATAN, Kabupaten JAKARTA SELATAN, Provinsi DKI JAKARTA <br>
+                        <b>Jenis Kelamin:</b> LAKI-LAKI <br>
+                        <b>Gol. Darah:</b> AB <br>
+                        <b>Agama:</b> ISLAM <br>
+                        <b>Status:</b> KAWIN <br>
+                        <b>Pekerjaan:</b> KARYAWAN SWASTA
+                    </p>        
+                    </div> 
+                    <div id="biodata3">
+                    <h5 class="card-title">EK0 WIJOYO</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">NIK : 3174032608740004 </h6>
+                    <p class="" style="font-size: 12px; line-height: 2;">
+                        <b>No.KK:</b> 3174031401093497 <br>
+                        <b>TTL:</b> JAKARTA, 26-08-1974 <br>
+                        <b>Alamat:</b> JL.KEMANG UTARA I B 013/001, Kelurahan BANGKA, Kecamatan MAMPANG PRAPATAN, Kabupaten JAKARTA SELATAN, Provinsi DKI JAKARTA <br>
+                        <b>Jenis Kelamin:</b> LAKI-LAKI <br>
+                        <b>Gol. Darah:</b> AB <br>
+                        <b>Agama:</b> ISLAM <br>
+                        <b>Status:</b> KAWIN <br>
+                        <b>Pekerjaan:</b> KARYAWAN SWASTA
+                    </p>        
+                    </div> 
+                    <div id="biodata4">
+                    <h5 class="card-title">FIRMAN</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">NIK : 3174032608740005 </h6>
+                    <p class="" style="font-size: 12px; line-height: 2;">
+                        <b>No.KK:</b> 3174031401093498 <br>
+                        <b>TTL:</b> JAKARTA, 26-08-1974 <br>
+                        <b>Alamat:</b> JL.KEMANG UTARA I B 013/001, Kelurahan BANGKA, Kecamatan MAMPANG PRAPATAN, Kabupaten JAKARTA SELATAN, Provinsi DKI JAKARTA <br>
+                        <b>Jenis Kelamin:</b> LAKI-LAKI <br>
+                        <b>Gol. Darah:</b> AB <br>
+                        <b>Agama:</b> ISLAM <br>
+                        <b>Status:</b> KAWIN <br>
+                        <b>Pekerjaan:</b> KARYAWAN SWASTA
+                    </p>        
+                    </div>                        
+                </div>
             </div>
         </div>
         </div>
     </div>
+    </div>
 </div>
+<!-- End The Modal -->
+<!--  modal upload -->
+<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel">Upload Images / Video</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="text-center">
+            <form action="#">
+            <input class="file-input" type="file" name="file" accept="image/*" hidden>
+            <i class="fas fa-cloud-upload-alt"></i>
+            <!-- <p>Browse Images</p> -->
+            </form>
+            <section class="progress-area"></section>
+            <section class="uploaded-area"></section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end modal upload -->
 <script type="text/javascript"> 
+// display menu
+$(document).ready(function(){
+   $("#heystack").click(function(){
+       $("#heystack-galery").css("display","block");
+       $("#foto-upload").css("display","none");
+   });
+});
+$(document).ready(function(){
+   $("#beranda").click(function(){
+       $("#heystack-galery").css("display","none");
+       $("#foto-upload").css("display","block");
+   });
+});
+// end display menu
+
+// info identifikasi dan foto 
     var x1 = document.getElementById("fotokecil1");
     var x2 = document.getElementById("fotokecil2");
     var x3 = document.getElementById("fotokecil3");
@@ -211,5 +260,32 @@ require 'header.php';
         a.style.display = "none";
     }
     }
+// end info identifikasi dan foto
+
+// galery
+    // $('.portfolio-item').isotope({
+    //  	itemSelector: '.item',
+    //  	layoutMode: 'fitRows'
+    //  });
+    $('.portfolio-menu ul li').click(function(){
+        $('.portfolio-menu ul li').removeClass('active');
+        $(this).addClass('active');
+        
+        var selector = $(this).attr('data-filter');
+        $('.portfolio-item').isotope({
+            filter:selector
+        });
+        return  false;
+        });
+        $(document).ready(function() {
+        var popup_btn = $('.popup-btn');
+        popup_btn.magnificPopup({
+        type : 'image',
+        gallery : {
+        enabled : true
+        }
+        });
+        });
+// end galery
 </script>
 <?php require 'footer.php'; ?>
