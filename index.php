@@ -1,7 +1,9 @@
 <?php 
-require 'header.php'; 
+    require 'header.php'; 
+    require "curlApi.php"; 
 // echo isset($output);
 ?>
+<script src="callapi.js"></script>
 <div class="container-fluid sticky-sm-top container800" style="position: absolute; top: 0px;">
 <div class="row my-2">
     <div class="col-2">
@@ -10,10 +12,23 @@ require 'header.php';
                 <a class="nav-link text-white" id="beranda">Beranda</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" id="heystack">List Foto</a>
+                <a class="nav-link text-white" id="heystack">List Heystack</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" data-bs-toggle="modal" href="#exampleModalToggle">Upload</a>
+                <a class="nav-link text-white" id="potrait">List Potrait</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    Upload
+                </a>
+                <ul class="dropdown-menu nav-item" aria-labelledby="dropdownMenuButton1" style="background-color: #0C4152;">
+                    <li>
+                        <a class="nav-link text-white" data-bs-toggle="modal" href="#modalHeystack">Upload Heystack</a>
+                    </li>
+                    <li>
+                        <a class="nav-link text-white" data-bs-toggle="modal" href="#modalPotrait">Upload Potrait</a>
+                    </li>
+                </ul>
             </li>
         </ul>
     </div>
@@ -32,9 +47,13 @@ require 'header.php';
         <div class="border text-center bg-dark px-1 py-1 rounded" id="heystack-galery" style="display:none;">
             <?php include "heystack-galery.php";?>
         </div>
+        <div class="border text-center bg-dark px-1 py-1 rounded" id="potrait-galery" style="display:none;">
+            <?php include "potrait-galery.php";?>
+        </div>
     </div>
 </div>
 </div>
+
 
 <!-- The Modal -->
 <div class="modal fade" id="showIdentification">
@@ -152,18 +171,18 @@ require 'header.php';
 </div>
 <!-- End The Modal -->
 <!--  modal upload -->
-<div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+<div class="modal fade" id="modalHeystack" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1" style="background-color: #103552;">
   <div class="modal-dialog modal-dialog-centered modal-sm">
-    <div class="modal-content">
+    <div class="modal-content" style="background-color: #0C4152;">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalToggleLabel">Upload Images / Video</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h5 class="modal-title text-white" id="exampleModalToggleLabel">Heystack Uplaod</h5>
+        <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div class="text-center">
             <form action="#">
             <input class="file-input" type="file" name="file" accept="image/*" hidden>
-            <i class="fas fa-cloud-upload-alt"></i>
+            <i class="fas fa-cloud-upload-alt text-white"></i>
             <!-- <p>Browse Images</p> -->
             </form>
             <section class="progress-area"></section>
@@ -173,18 +192,52 @@ require 'header.php';
     </div>
   </div>
 </div>
+
+<!-- end modal upload -->
+<!--  modal upload -->
+<div class="modal fade" id="modalPotrait" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1" style="background-color: #103552;">
+<div class="modal-dialog modal-dialog-centered modal-sm">
+    <div class="modal-content" style="background-color: #0C4152;">
+      <div class="modal-header">
+        <h5 class="modal-title text-white" id="exampleModalToggleLabel">Potrait Uplaod</h5>
+        <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="text-center">
+            <form action="#">
+            <input class="file-input" type="file" name="file" accept="image/*" hidden>
+            <i class="fas fa-cloud-upload-alt text-white"></i>
+            <!-- <p>Browse Images</p> -->
+            </form>
+            <section class="progress-area"></section>
+            <section class="uploaded-area"></section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- end modal upload -->
 <script type="text/javascript"> 
 // display menu
 $(document).ready(function(){
    $("#heystack").click(function(){
        $("#heystack-galery").css("display","block");
+       $("#potrait-galery").css("display","none");
+       $("#foto-upload").css("display","none");
+   });
+});
+$(document).ready(function(){
+   $("#potrait").click(function(){
+       $("#potrait-galery").css("display","block");
+       $("#heystack-galery").css("display","none");
        $("#foto-upload").css("display","none");
    });
 });
 $(document).ready(function(){
    $("#beranda").click(function(){
        $("#heystack-galery").css("display","none");
+       $("#potrait-galery").css("display","none");
        $("#foto-upload").css("display","block");
    });
 });
