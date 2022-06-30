@@ -16,74 +16,74 @@ fileInput.onchange = ({target})=>{
       let splitName = fileName.split('.');
       fileName = splitName[0].substring(0, 13) + "... ." + splitName[1];
     }
-    uploadFile(fileName); //calling uploadFile with passing file name as an argument
+    uploadHeystack(); //calling uploadFile with passing file name as an argument
   }
 }
 
-// file upload function
-function uploadFile(name){
-  let xhr = new XMLHttpRequest(); //creating new xhr object (AJAX)
-  xhr.open("POST", "php/upload.php"); //sending post request to the specified URL
-  xhr.upload.addEventListener("progress", ({loaded, total}) =>{ //file uploading progress event
-    let fileLoaded = Math.floor((loaded / total) * 100);  //getting percentage of loaded file size
-    let fileTotal = Math.floor(total / 1000); //gettting total file size in KB from bytes
-    let fileSize;
-    // if file size is less than 1024 then add only KB else convert this KB into MB
-    (fileTotal < 1024) ? fileSize = fileTotal + " KB" : fileSize = (loaded / (1024*1024)).toFixed(2) + " MB";
-    let progressHTML = `<div id="notif"><li class="row">
-                          <i class="fas fa-file-alt"></i>
-                          <div class="content">
-                            <div class="details">
-                              <span class="name">${name} • Uploading</span>
-                              <span class="percent">${fileLoaded}%</span>
-                            </div>
-                            <div class="progress-bar">
-                              <div class="progress" style="width: ${fileLoaded}%"></div>
-                            </div>
-                          </div>
-                        </li></div>`;
-    // uploadedArea.innerHTML = ""; //uncomment this line if you don't want to show upload history
-    uploadedArea.classList.add("onprogress");
-    progressArea.innerHTML = progressHTML;
-    if(loaded == total){
-      progressArea.innerHTML = "";
-      let uploadedHTML = `<div id="notif"><li class="row">
-                            <div class="content upload">
-                              <i class="fas fa-file-alt"></i>
-                              <div class="details">
-                                <span class="name">${name} • Uploaded</span>
-                                <span class="size">${fileSize}</span>
-                            <i class="fas fa-check"></i>
+// // file upload function
+// function uploadFile(name){
+//   let xhr = new XMLHttpRequest(); //creating new xhr object (AJAX)
+//   xhr.open("POST", "php/upload.php"); //sending post request to the specified URL
+//   xhr.upload.addEventListener("progress", ({loaded, total}) =>{ //file uploading progress event
+//     let fileLoaded = Math.floor((loaded / total) * 100);  //getting percentage of loaded file size
+//     let fileTotal = Math.floor(total / 1000); //gettting total file size in KB from bytes
+//     let fileSize;
+//     // if file size is less than 1024 then add only KB else convert this KB into MB
+//     (fileTotal < 1024) ? fileSize = fileTotal + " KB" : fileSize = (loaded / (1024*1024)).toFixed(2) + " MB";
+//     let progressHTML = `<div id="notif"><li class="row">
+//                           <i class="fas fa-file-alt"></i>
+//                           <div class="content">
+//                             <div class="details">
+//                               <span class="name">${name} • Uploading</span>
+//                               <span class="percent">${fileLoaded}%</span>
+//                             </div>
+//                             <div class="progress-bar">
+//                               <div class="progress" style="width: ${fileLoaded}%"></div>
+//                             </div>
+//                           </div>
+//                         </li></div>`;
+//     // uploadedArea.innerHTML = ""; //uncomment this line if you don't want to show upload history
+//     uploadedArea.classList.add("onprogress");
+//     progressArea.innerHTML = progressHTML;
+//     if(loaded == total){
+//       progressArea.innerHTML = "";
+//       let uploadedHTML = `<div id="notif"><li class="row">
+//                             <div class="content upload">
+//                               <i class="fas fa-file-alt"></i>
+//                               <div class="details">
+//                                 <span class="name">${name} • Uploaded</span>
+//                                 <span class="size">${fileSize}</span>
+//                             <i class="fas fa-check"></i>
 
-                              </div>
-                            </div>
-                          </li></div>`;
-      uploadedArea.classList.remove("onprogress");
-      // uploadedArea.innerHTML = uploadedHTML; //uncomment this line if you don't want to show upload history
-      uploadedArea.insertAdjacentHTML("afterbegin", uploadedHTML); //remove this line if you don't want to show upload history
-    }
-  });
-  let data = new FormData(form); //FormData is an object to easily send form data
-  xhr.send(data); //sending form data
+//                               </div>
+//                             </div>
+//                           </li></div>`;
+//       uploadedArea.classList.remove("onprogress");
+//       // uploadedArea.innerHTML = uploadedHTML; //uncomment this line if you don't want to show upload history
+//       uploadedArea.insertAdjacentHTML("afterbegin", uploadedHTML); //remove this line if you don't want to show upload history
+//     }
+//   });
+//   let data = new FormData(form); //FormData is an object to easily send form data
+//   xhr.send(data); //sending form data
   
-  $(function() {
-    setTimeout(function() { $("#notif").fadeOut(1500); }, 2000)
-  })
-  $(document).ready(function(){
-    setInterval(function(){
-      $("#fotoo").load(location.reload(true))
-      }, 2000);
-  });
-  // setInterval(callfoto(), 4000);
+//   $(function() {
+//     setTimeout(function() { $("#notif").fadeOut(1500); }, 2000)
+//   })
+//   $(document).ready(function(){
+//     setInterval(function(){
+//       $("#fotoo").load(location.reload(true))
+//       }, 2000);
+//   });
+//   // setInterval(callfoto(), 4000);
 
-  // function callfoto(){
-  //   var x1 = document.getElementById("fotokecil1");
-  //   var x2 = document.getElementById("fotokecil2");
-  //   var x3 = document.getElementById("fotokecil3");
-  //   var x4 = document.getElementById("fotokecil4");
-  //   x1.style.display = "block";
-  //   x2.style.display = "block";
-  //   x3.style.display = "block";
-  //   x4.style.display = "block";
-  // }
-}
+//   // function callfoto(){
+//   //   var x1 = document.getElementById("fotokecil1");
+//   //   var x2 = document.getElementById("fotokecil2");
+//   //   var x3 = document.getElementById("fotokecil3");
+//   //   var x4 = document.getElementById("fotokecil4");
+//   //   x1.style.display = "block";
+//   //   x2.style.display = "block";
+//   //   x3.style.display = "block";
+//   //   x4.style.display = "block";
+//   // }
+// }

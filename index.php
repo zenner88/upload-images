@@ -180,14 +180,27 @@
       </div>
       <div class="modal-body">
         <div class="text-center">
-            <form action="#">
+            <form enctype="multipart/form-data" action="" method="POST">
             <input class="file-input" type="file" name="file" accept="image/*" hidden>
             <i class="fas fa-cloud-upload-alt text-white"></i>
             <!-- <p>Browse Images</p> -->
             </form>
             <section class="progress-area"></section>
             <section class="uploaded-area"></section>
+
+            <form enctype="multipart/form-data" action="upload-heystack.php" method="POST">
+                <!-- Name of input element determines name in $_FILES array -->
+                Send this file: <input name="file" type="file" id="uploads"/>
+                <input type="submit" value="Send File" id="submitUpload"/>
+            </form>
+
+
         </div>
+        <?php
+        if(isset($resp['url'])){
+            echo '<img src="'.$resp['url'].'"/>';
+        }
+        ?>
       </div>
     </div>
   </div>
@@ -221,7 +234,7 @@
 <script type="text/javascript"> 
 // display menu
 $(document).ready(function(){
-   $("#heystack").click(function(){
+   $("#heystack").click(function heyhey(){
        $("#heystack-galery").css("display","block");
        $("#potrait-galery").css("display","none");
        $("#foto-upload").css("display","none");
